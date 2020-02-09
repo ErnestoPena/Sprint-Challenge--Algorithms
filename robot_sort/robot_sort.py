@@ -92,12 +92,46 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+
+
+
+
     def sort(self):
-        """
-        Sort the robot's list.
-        """
-        # Fill this out
-        pass
+        #Using the bubble sort I did for the iterative sorting as a guide
+        # # TO-DO:  implement the Bubble Sort function below
+        #def bubble_sort( arr ):
+        #    finish_loop = True
+        #    array_length = len(arr)
+        #    while finish_loop:
+        #        finish_loop = False
+        #        for i in range(0, array_length - 1):
+        #            left_value , right_value = arr[i] , arr[i+1]
+        #            if left_value > right_value:
+        #                arr[i] , arr[i+1] = right_value , left_value 
+        #                finish_loop = True
+        #        array_length = array_length -1 
+        #    return arr
+        # 
+        self.light_is_on()                              # Setting the flag to on to initialize the while loop
+        while self.light_is_on()                        # While loop will run while there are swaps on each pass
+            self.set_light_off()                        # Setting the flag to off. This will cause the loop to end if no swaps
+            while self.move_right():
+                if self.compare_item():
+                    self.swap_item()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
